@@ -26,6 +26,7 @@ baseurl: ""
 url: ""
 twitter_username: SYCLsafety
 github_username:  irudkin
+google_analytics: "G-L9Z6QJ67WQ"
 
 # Build settings
 theme: minima
