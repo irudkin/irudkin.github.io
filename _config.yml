@@ -21,7 +21,7 @@
 title: SYCL Safety - SYCL for Safety Practitioners
 email: codefurnace@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Safe SYCL - SYCL for Safety Practitioners. Techical series of blogs or articles for practitioners looking to use SYCL accelerated applications on embedded heterogeneous platforms for safety systems for example, for automotive.
+  Safe SYCL - SYCL for Safety Practitioners. Technical series of blogs or articles for practitioners looking to use SYCL accelerated applications on embedded heterogeneous platforms for safety systems for example, for automotive.
 baseurl: ""
 url: ""
 twitter_username: SYCLsafety
