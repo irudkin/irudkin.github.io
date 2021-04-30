@@ -8,26 +8,48 @@ layout: default
   {%- endif -%}
 
   {{ content }}
+  
+  {% assign nCodeplayPosts = 4 %}
+  {% assign nPost = site.posts.size %}
+  {% assign nDisplayCodeplayPostAt = nPost | minus: nCodeplayPosts %}
+  {% assign nDisplaySYCLSafetyPostAt = nPost %}
 
-   {%- if site.posts.size > 0 -%}
-    <h1 class="post-list-heading">{{ page.list_title | default: "Codeplay hosted posts" }}</h1>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h2>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h2>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+  
+  {% assign i = 0 %}
+  {% assign j = nPost %}
+  {%- if nPost > 0 -%}
+  
+  
+  
+  <ul class="post-list">
+     {%- for post in site.posts -%}
+     
+     {% if j == nDisplaySYCLSafetyPostAt and j != nCodeplayPosts %}
+        <h1 class="post-list-heading">{{ page.list_title | default: "SYCL Safety Tech hosted posts" }}</h1>
+     {% endif %}
+     
+     {%- if i == nDisplayCodeplayPostAt -%}
+      <h1 class="post-list-heading">{{ page.list_title | default: "Codeplay hosted posts" }}</h1>
+     {%- endif -%}
 
+     <li>
+       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+       <span class="post-meta">{{ post.date | date: date_format }}</span>
+       <h2>
+         <a class="post-link" href="{{ post.url | relative_url }}">
+           {{ post.title | escape }}
+         </a>
+       </h2>
+       {%- if site.show_excerpts -%}
+         {{ post.excerpt }}
+       {%- endif -%}
+     </li>
+     {% assign i = i | plus:1 %}
+     {% assign j = j | minus:1 %}
+     {%- endfor -%}
+   </ul>
+
+   
   {%- endif -%}
 
 </div>

@@ -31,7 +31,12 @@ google_analytics: "G-L9Z6QJ67WQ"
 # Build settings
 theme: minima
 plugins:
-  - jekyll-feed
+   - jekyll-paginate
+   - jekyll-sitemap
+   - jekyll-gist
+   - jekyll-feed
+   - jemoji
+   - jekyll-include-cache
 
 # Exclude from processing.
 # The following items will not be processed, by default.

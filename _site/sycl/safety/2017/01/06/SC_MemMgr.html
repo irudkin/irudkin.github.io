@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Part 1 SYCL for Safety Practitioners – An Introduction | SYCL Safety - SYCL for Safety Practitioners</title>
+<title>Safety-Critical Memory Manager - Do it first! | SYCL Safety - SYCL for Safety Practitioners</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Part 1 SYCL for Safety Practitioners – An Introduction" />
+<meta property="og:title" content="Safety-Critical Memory Manager - Do it first!" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="First in a series of technical blogs Part 1 - An Introduction. This blog introduces the SYCL technical articals providing information that practitioners may find useful when looking at the SYCL accelerated stack supporting automotive ADAS systems." />
-<meta property="og:description" content="First in a series of technical blogs Part 1 - An Introduction. This blog introduces the SYCL technical articals providing information that practitioners may find useful when looking at the SYCL accelerated stack supporting automotive ADAS systems." />
-<link rel="canonical" href="http://localhost:4000/sycl/safety/2020/07/13/SYCL-for-Safety-Practitioners-An-Introduction.html" />
-<meta property="og:url" content="http://localhost:4000/sycl/safety/2020/07/13/SYCL-for-Safety-Practitioners-An-Introduction.html" />
+<meta name="description" content="In my experience, when implementing an application, the memory management part of its design is very often overlooked. That is also the case when using SYCL acceleration stacks for safety critical applictions (SC). This blog post talks about why a memory manager should be considered in the design, especially for a SC system, and why the designers of such systems should consider implementing it first, before doing anything else. Read more" />
+<meta property="og:description" content="In my experience, when implementing an application, the memory management part of its design is very often overlooked. That is also the case when using SYCL acceleration stacks for safety critical applictions (SC). This blog post talks about why a memory manager should be considered in the design, especially for a SC system, and why the designers of such systems should consider implementing it first, before doing anything else. Read more" />
+<link rel="canonical" href="http://localhost:4000/sycl/safety/2017/01/06/SC_MemMgr.html" />
+<meta property="og:url" content="http://localhost:4000/sycl/safety/2017/01/06/SC_MemMgr.html" />
 <meta property="og:site_name" content="SYCL Safety - SYCL for Safety Practitioners" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2020-07-13T11:17:53+01:00" />
+<meta property="article:published_time" content="2017-01-06T10:17:53+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Part 1 SYCL for Safety Practitioners – An Introduction" />
+<meta property="twitter:title" content="Safety-Critical Memory Manager - Do it first!" />
 <script type="application/ld+json">
-{"description":"First in a series of technical blogs Part 1 - An Introduction. This blog introduces the SYCL technical articals providing information that practitioners may find useful when looking at the SYCL accelerated stack supporting automotive ADAS systems.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/sycl/safety/2020/07/13/SYCL-for-Safety-Practitioners-An-Introduction.html"},"url":"http://localhost:4000/sycl/safety/2020/07/13/SYCL-for-Safety-Practitioners-An-Introduction.html","headline":"Part 1 SYCL for Safety Practitioners – An Introduction","dateModified":"2020-07-13T11:17:53+01:00","datePublished":"2020-07-13T11:17:53+01:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"description":"In my experience, when implementing an application, the memory management part of its design is very often overlooked. That is also the case when using SYCL acceleration stacks for safety critical applictions (SC). This blog post talks about why a memory manager should be considered in the design, especially for a SC system, and why the designers of such systems should consider implementing it first, before doing anything else. Read more","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/sycl/safety/2017/01/06/SC_MemMgr.html"},"url":"http://localhost:4000/sycl/safety/2017/01/06/SC_MemMgr.html","headline":"Safety-Critical Memory Manager - Do it first!","dateModified":"2017-01-06T10:17:53+00:00","datePublished":"2017-01-06T10:17:53+00:00","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="SYCL Safety - SYCL for Safety Practitioners" />
 </head>
@@ -41,17 +41,17 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Part 1 SYCL for Safety Practitioners – An Introduction</h1>
+    <h1 class="post-title p-name" itemprop="name headline">Safety-Critical Memory Manager - Do it first!</h1>
     <p class="post-meta">
-      <time class="dt-published" datetime="2020-07-13T11:17:53+01:00" itemprop="datePublished">Jul 13, 2020
+      <time class="dt-published" datetime="2017-01-06T10:17:53+00:00" itemprop="datePublished">Jan 6, 2017
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>First in a series of technical blogs <a href="https://codeplay.com/portal/blogs/2020/07/13/sycl-safety-part-1.html">Part 1 - An Introduction</a>. This blog introduces the SYCL technical articals providing information that practitioners may find useful when looking at the SYCL accelerated stack supporting automotive ADAS systems.</p>
+    <p>In my experience, when implementing an application, the memory management part of its design is very often overlooked. That is also the case when using SYCL acceleration stacks for safety critical applictions (SC). This blog post talks about why a memory manager should be considered in the design, especially for a SC system, and why the designers of such systems should consider implementing it first, before doing anything else. <a href="https://codeplay.com/portal/blogs/2017/01/06/codeplay-s-safety-critical-memory-manager.html">Read more</a></p>
 
 
-  </div><a class="u-url" href="/sycl/safety/2020/07/13/SYCL-for-Safety-Practitioners-An-Introduction.html" hidden></a>
+  </div><a class="u-url" href="/sycl/safety/2017/01/06/SC_MemMgr.html" hidden></a>
 </article>
 
       </div>
